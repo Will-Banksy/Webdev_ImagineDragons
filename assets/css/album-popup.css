@@ -1,0 +1,94 @@
+.album-popup-root {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0px;
+	left: 0px;
+	overflow: auto;
+	background-color: #000000cc; /* bit less than half transparency */
+	z-index: 100 !important;
+}
+
+.album-popup {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.album-popup > * {
+	margin-bottom: 1rem;
+	flex-shrink: 1;
+}
+
+.album-popup > *:first-child {
+	margin-top: 1rem;
+}
+
+.album-cover-tracks-container {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: stretch;
+	align-self: stretch;
+}
+
+.album-cover-tracks-container figure {
+	margin-bottom: 1rem;
+	flex-grow: 0;
+	flex-shrink: 1;
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.album-cover-tracks-container figure img {
+	max-width: 500px;
+	max-height: 500px;
+	height: auto;
+	width: 100%;
+	margin-bottom: 0.4rem;
+}
+
+.album-cover-tracks-container figure figcaption {
+	max-width: 500px;
+}
+
+.album-tracks {
+	height: 100%;
+	overflow: auto;
+	margin-right: 0;
+	border-top: 1px solid var(--bg3);
+	border-bottom: 1px solid var(--bg3);
+	flex-grow: 1;
+	padding: 0 1rem;
+}
+
+@media only screen /* and (max-width: 1023px) */ and (min-width: 1024px) {
+	.album-cover-tracks-container {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.album-cover-tracks-container figure {
+		margin: 0 2rem;
+	}
+
+	.album-tracks {
+		margin-right: 2rem;
+		align-self: flex-start;
+	}
+}
+
+.album-tracks-header,
+.album-tracks-entry {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.4rem 0;
+}
+
+.album-tracks-header {
+	color: var(--txt0);
+}

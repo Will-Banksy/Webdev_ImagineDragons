@@ -1,0 +1,298 @@
+/* Import Lato font */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Variables */
+
+:root {
+	/* Palette */
+	--bg0: #000000;
+	--bg1: #191921;
+	--bg2: #2c2c33;
+	--bg3: #4b4b50;
+
+	--txt0: #918d84;
+	--txt1: #d3cfc6;
+	--txt2: #e9e8e0;
+	--txt3: #ffffff;
+
+	--acc: #5fcf8c;
+	--err: #e05c5c;
+
+	/* Fonts */
+	--hdr-font: 'Lato', sans-serif;
+	--txt-font: 'Lato', sans-serif;
+}
+
+/* Generic Styling */
+
+* {
+	z-index: inherit !important;
+}
+
+body {
+	padding: 0px !important;
+	background-color: var(--bg0);
+	color: var(--txt2);
+	font-family: var(--txt-font);
+	min-height: 100vh;
+	z-index: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--hdr-font);
+	color: var(--txt3);
+}
+
+h2, h3, h4, h5, h6 {
+	border-bottom: 1px solid var(--bg3);
+}
+
+a:not(nav a) {
+	color: var(--acc);
+	text-decoration: none;
+}
+
+a:not(nav a):hover {
+	color: var(--acc);
+	text-decoration: underline;
+}
+
+a[target="_blank"]:not(a[noicon=""])::after {
+	background-image: url("../img/external-link.svg");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	content: " ";
+	display: inline-block;
+	position: relative;
+	width: 1rem;
+	height: 1rem;
+	margin-left: 0.1rem;
+	transform: translateY(0.125rem);
+}
+
+table {
+	background-color: var(--bg1);
+	border-collapse: collapse;
+}
+
+table td,
+table th {
+	border: 1px solid var(--bg3);
+	padding: 0.5rem 0.75rem;
+}
+
+input[type="text"],
+input[type="password"] {
+	background-color: var(--bg1);
+	border: 1px solid var(--bg3);
+	color: inherit !important;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+	border-color: var(--txt1);
+	outline: none;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+	background-color: var(--bg1);
+	border: 1px solid var(--bg3);
+	color: inherit !important;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+	background-color: var(--bg2);
+}
+
+input[type="submit"]:focus,
+input[type="button"]:focus,
+button:focus {
+	border-color: var(--txt1);
+	outline: none;
+}
+
+section {
+	margin-bottom: 2rem;
+}
+
+/* Specific Styling */
+
+/* - Global Area */
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+	align-items: stretch;
+}
+
+/* Navigation Area */
+
+html[data-scroll="0"] nav { /* This attribute will only be set, and therefore this rule will only apply, if JS is enabled */
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+	background-color: rgba(0, 0, 0, 0);
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-wrap: wrap;
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	background-image: none;
+	background-color: var(--bg0);
+	transition: background 0.3s ease-out;
+	padding: 1rem 0;
+	z-index: 10 !important;
+}
+
+nav .nav-heading {
+	font-size: 125%;
+	font-weight: bold;
+}
+
+nav span.nav-link-list {
+	display: flex;
+	align-items: stretch;
+}
+
+nav span a {
+	color: var(--txt3) !important;
+	position: relative;
+	height: 100%;
+	text-decoration: none;
+	padding-top: 0.2rem;
+}
+
+nav span a::after {
+	content: "";
+	height: 1px;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0%;
+	background-color: rgba(0, 0, 0, 0);
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+nav span a:hover::after,
+nav span a:focus::after {
+	background-color: var(--acc);
+	width: 100%;
+}
+
+nav span a:not(:last-of-type) {
+	margin-right: 1rem;
+}
+
+/* - Header Area */
+
+.page-header {
+	flex-grow: 0;
+}
+
+header {
+	width: 100%;
+	background-image: url("../img/artist-photo.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+header h1 {
+	padding: 30vh 0px;
+	text-align: center;
+}
+
+/* - Main Content Area */
+
+.page-content {
+	background-color: var(--bg0);
+	box-shadow: 0 -25px 25px var(--bg0);
+	flex-grow: 1;
+}
+
+main {
+	padding: 4rem 0;
+}
+
+.album-cover-button {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
+}
+
+.album-cover {
+	max-width: 250px;
+	max-height: 250px;
+	height: auto;
+	width: 100%;
+}
+
+.centre-items-hor {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.centre-items-ver {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.centre-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.centre-row {
+	justify-content: center;
+}
+
+.fullwidth-children * {
+	width: 100%;
+}
+
+.album-list-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	flex-direction: row;
+	/* box-sizing: content-box; */
+}
+
+.album-list-item {
+	/* border: solid 0.5rem rgba(0, 0, 0, 0); */
+	padding: 0.5rem;
+	flex-shrink: 1;
+}
+
+.album-list-item-internal-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.album-list-item-internal-wrapper figcaption {
+	flex-shrink: 1;
+	max-width: 250px;
+}
+
+#unavailable-username-warning {
+	color: var(--err);
+}
+
+.space-below {
+	margin-bottom: 1rem;
+}

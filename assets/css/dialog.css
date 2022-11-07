@@ -1,0 +1,24 @@
+.dialog-root {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0px;
+	left: 0px;
+	overflow: auto;
+	background-color: #000000cc; /* bit less than half transparency */
+	z-index: 100 !important;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.dialog-body {
+	border: 1px solid var(--bg3);
+	background: var(--bg0);
+	padding: 1rem 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
